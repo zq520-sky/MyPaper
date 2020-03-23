@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.pojo">
+    <class name="com.pojo.Record" table="record">
+
+
+        <!-- 主键 ，映射-->
+        <id name="id" column="id">
+            <generator class="native"/>
+        </id>
+       <property name="date" type="java.util.Date" column="日期"></property>
+       <property name="note" column="记录"></property>
+        <many-to-one name="student" lazy="false" cascade="all">
+            <column name="s_id"></column>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

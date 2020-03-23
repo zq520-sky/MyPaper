@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.pojo">
+    <class name="com.pojo.UserOperateLog" table="USER_OPERATE_LOG">
+
+        <!-- 主键 ，映射-->
+        <id name="id" column="id">
+            <generator class="native"/>
+        </id>
+        <property name="createTime" column="创建时间"></property>
+        <property name="userName" column="用户名"></property>
+        <property name="sno" column="学号"/>
+        <property name="ipAddress" column="Ip地址"></property>
+        <property name="operateDesc" column="操作描述"></property>
+        <property name="operationType" column="操作类型"></property>
+    </class>
+
+</hibernate-mapping>

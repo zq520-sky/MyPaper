@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.pojo">
+    <class name="com.pojo.Student" table="student">
+
+        <!-- 主键 ，映射-->
+        <id name="id" column="id">
+            <generator class="native"/>
+        </id>
+        <!-- 非主键，映射 -->
+        <property name="username" column="username"/>
+        <property name="sno" column="sno" unique="true"/>
+        <property name="password" column="password"/>
+        <property name="gender" column="gender"/>
+        <property name="telephone" column="telephone"/>
+        <property name="status" column="status"/>
+        <many-to-one name="admin" lazy="false">
+            <column name="admin_id" />
+        </many-to-one>
+        <many-to-one name="clazz" unique="true" lazy="false" cascade="delete">
+            <column name="class_id" />
+        </many-to-one>
+        <many-to-one name="doom" column="doom_id" class="Doom" lazy="false" not-found="ignore"></many-to-one>
+
+        <many-to-one name="room"  lazy="false" not-found="ignore">
+            <column name="room_id"></column>
+        </many-to-one>
+
+        <set name="records" lazy="false" >
+            <key column="s_id"></key>
+            <one-to-many class="Record"></one-to-many>
+        </set>
+        <many-to-one class="RoomTeacher" name="roomTeachers" lazy="false">
+            <column name="roomTeacher_id" />
+        </many-to-one>
+
+    </class>
+
+</hibernate-mapping>

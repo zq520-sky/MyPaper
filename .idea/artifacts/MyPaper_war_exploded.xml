@@ -1,0 +1,26 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="MyPaper:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/MyPaper_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="MyPaper/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="MyPaper" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="hibernate" />
+          <element id="library" level="project" name="jstl的jar包" />
+          <element id="library" level="project" name="gson-2.8.5" />
+          <element id="library" level="project" name="spring" />
+          <element id="library" level="project" name="json" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/servlet-api.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/spring-web-4.2.6.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/spring-webmvc-4.2.6.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/spring-websocket-4.2.6.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/spring-webmvc-portlet-4.2.6.RELEASE.jar" />
+          <element id="library" level="project" name="joda-time" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

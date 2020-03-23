@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="MyPaper:war">
+    <output-path>$PROJECT_DIR$/out/artifacts/MyPaper_war</output-path>
+    <root id="archive" name="MyPaper_war.war">
+      <element id="artifact" artifact-name="MyPaper:war exploded" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="hibernate" />
+          <element id="library" level="project" name="jstl的jar包" />
+          <element id="library" level="project" name="gson-2.8.5" />
+          <element id="library" level="project" name="spring" />
+          <element id="library" level="project" name="joda-time" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

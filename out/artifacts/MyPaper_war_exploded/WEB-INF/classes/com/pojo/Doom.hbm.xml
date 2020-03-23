@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.pojo">
+    <class name="com.pojo.Doom" table="doom">
+
+
+        <!-- 主键 ，映射-->
+        <id name="id" column="id">
+            <generator class="native"/>
+        </id>
+        <property name="name" column="宿舍名"></property>
+
+        <many-to-one name="room" class="Room" lazy="false">
+            <column name="room"></column>
+        </many-to-one>
+        <set name="studentList" lazy="false">
+            <key column="doom_id"/><!-- 把这里dom表的主键作为student的外键 -->
+            <one-to-many class="Student" ></one-to-many>
+        </set>
+        <set name="repairRecords">
+            <key column="doom_id"></key>
+            <one-to-many class="RepairRecord"></one-to-many>
+        </set>
+    </class>
+</hibernate-mapping>
